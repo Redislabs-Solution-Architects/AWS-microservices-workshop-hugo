@@ -1,22 +1,28 @@
 ---
-title: "AWS Modernization Workshop"
+title: "Redis - So Much More than just a Cache"
 chapter: true
 weight: 1
 ---
 
-# AWS Modernization Workshop
+# Redis - So Much More Than A Cache
 
-### Welcome
+Redis is a great cache, but it is so much more than that. This workshop will help you understand some of the many features that takes Redis beyond a cache. 
 
-In this workshop you will learn why DevOps is a pattern for modernization and how to use patterns to release features and functionality at a faster pace.
+## Prerequisite Knowledge and Experience
+We’re expecting you to be:
+
+* comfortable using Git; 
+* have Maven and Java installed locally; 
+* can use Docker on your laptop;
+* can install a simple application (RedisInsight). 
+
 
 ### Learning Objectives
-- Deploy Cloud9 as an IDE for completing workshop exercises.
-- How DevOps patterns help to release features and functionality faster.
-- Best practices for implementing 2 pizza team pipelines.
+- Understand Key Redis Features including Caching
+- Become familiar with using RedisInsight
 
 {{% notice warning %}}
 <p style='text-align: left;'>
-The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various AWS services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.
+Once you've completed this course you won't be able to look at Redis the same way ever again. This will change the way you think about Redis, how it can be used, and what its appropriate for. Please do not continue if you cannot cope with that change!
 </p>
 {{% /notice %}}
