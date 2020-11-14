@@ -1,15 +1,21 @@
 ---
-title: "Modernizing your Legacy Application"
+title: "Modernization"
 chapter: true
 weight: 40
 ---
-The [Movies (Legacy)](http://localhost:8080/movies) application was written to show the kind of legacy application that so many users have to deal with. The application is just a bare minimum wrapper around the database fields, and it manages the amount of data shown to a user by dividing the output into pages of a certain number of database records. To find a specific record a user has to scroll through the pages which is both tedious and error-prone. The application does hide the underlying database schema and associated technology, which is better than nothing, but it offers little further value to the user. 
+# Modernizing your Legacy Application
+The [Movies (Legacy)] application was written to show the kind of legacy application that so many users have to deal with. The application is just a bare minimum wrapper around the database fields. The application does hide the underlying database schema and associated technology, which is better than nothing, but it offers little further value to the user. 
 
-What kind of value do we want to bring to the user? From the user’s perspective, these areas can be seen as:
+But what kind of value do we want to bring to the user? We can answer that by looking at how most applications of this kind are used. There are two functions in particular that stand out for most users:
 
-1. Finding what you want 
-1. Gaining Insights
+* Finding what you want (i.e you know something in the domain (a movie title, in this instance) and want to find out more about that which, to some extent, you already know)
+* Gaining insights (i.e. you want to leverage what you know to tell you things you really didn't know, and which might not even be encoded in the data directly)
 
-In a short while we’ll see how Redis can assist in these end-user requirements. 
+In a short while we’ll see how Redis can assist in both of these end-user requirements. 
 
-But first we have another problem to solve: We can’t modify the legacy application. So how do we connect the legacy application (MySQL database) to Redis so that we can use Redis to add value?
+But first we have another problem to solve: 
+
+We can’t modify the legacy application (that's what we mean by _legacy_). So how do we connect the legacy application (MySQL database in this case) to Redis so that we can use Redis to add value?
+
+----------
+[Movies (Legacy)]: http://localhost:8080/movies

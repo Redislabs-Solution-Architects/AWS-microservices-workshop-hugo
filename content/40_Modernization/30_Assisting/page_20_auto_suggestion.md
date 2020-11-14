@@ -11,12 +11,14 @@ To try this out, go to the [Search -> Autocomplete](http://localhost:8080/autoco
 Let's go to [RedisInsight] and try this out in the CLI:
 
 ```
-ft.suggest ms:search:suggest:movies th 
+ft.sugget ms:search:suggest:movies th 
 ```
 
 You’ll get back a list of 4 movies, all beginning with ‘th’. But they’re not in alphabetical order! Why is that? Take a look at the [FT.SUGGET] command and see if you can figure out why the movies are in the order that they’re in! To really understand it you’ll need to look at [FT.SUGADD] too, since that is the command used to put suggestions in a suggestion dictionary.
 
-But how do we know what suggest dictionary to use, or what suggestion dictionaries exist in Redis. In this particular case, because Tug Grall, the author of this application, named the dictionary well it's relatively easy to find it but, in general, there isn’t a command to list the suggestion dictionaries. In this workshop I found the dictionaries by using the following procedure:
+But how do we know what suggest dictionary to use, or what suggestion dictionaries exist in Redis? in general, there isn’t a command to list the suggestion dictionaries however, in this particular case Tug Grall (the author of this application) named the dictionary well making it relatively easy to find it. Thanks Tug!
+
+In this workshop I found the dictionaries by using the following procedure:
 
 In RedisInsight I selected the Browser, then used the key filter ![key filter icon] to filter on ‘Other module keys’: ![module keys]
  

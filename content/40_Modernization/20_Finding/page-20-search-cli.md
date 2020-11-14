@@ -4,7 +4,9 @@ weight: 20
 ---
 Let's look under the covers and get to grips with search using [RedisInsight]
 
-In [RedisInsight] select ‘RediSearch’ on the left hand side. At the top on the middle right you’ll see a drop down showing the first of two indexes: `ms:search:index:movies` (the other being `ms:search:index:actors`).
+In [RedisInsight] select ‘RediSearch’ on the left hand side. At the top on the middle right use the drop down menu to select the `ms:search:index:movies` index:
+
+![redisearch-indices]
 
 These indexes were created by the application - we’ll dig into them more shortly.
 
@@ -12,7 +14,51 @@ To execute a search similar to the ‘Search’ page you saw earlier, type ‘ma
 
 You’ll see the actual underlying redis command (`FT.SEARCH ms:search:index:movies marry`)  that was run, and the results. (Read the [FT.SEARCH] documentation for details.)
 
-Now copy that command to the Redis CLI (you’ll find that in [RedisInsight] as a menu item on the left hand side), paste it in and run it there to see the raw output.
+{{% notice warning %}}
+The 1.7.1 version of [Redisinsight] has a bug: it appends an extra colon to the end of the index name. If you look carefully you'll see that the command is shown as:
+
+```
+FT.SEARCH ms:search:index:movies: marry
+```
+
+You'll have to correct this when you use the CLI and remove the additional colon, thus:
+
+```
+FT.SEARCH ms:search:index:movies marry
+```
+
+{{% /notice %}}
+
+Now copy that command to the Redis CLI (you’ll find that in [RedisInsight] as a menu item on the left hand side), paste it in and run it there to see the raw output. You should see something that starts like this:
+
+```
+>> FT.SEARCH ms:search:index:movies marry
+ 1) (integer) 12
+ 2) "ms:docs:movies:990"
+ 3)  1) "release_year"
+     2) "2019"
+     3) "poster"
+     4) "https://m.media-amazon.com/images/M/MV5BNjU2NDllZjEtZjFkZC00ZDlhLWE3MjktY2RiYTU0NjY3NGYzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+     5) "plot"
+     6) "This new series expands the fan-favorite Married to Medicine to the West Coast. In the city of glitz and glam, these doctors save lives by day and walk red carpets at night. The docuseries ..."
+     7) "movie_id"
+     8) "990"
+     9) "genre"
+    10) "Reality-TV"
+    11) "rating"
+    12) "4.099999904632568"
+    13) "votes"
+    14) "34"
+    15) "title"
+    16) "Married to Medicine: Los Angeles"
+ 4) "ms:docs:movies:903"
+ 5)  1) "release_year"
+     2) "1981"
+     3) "poster"
+     4) "https://m.media-amazon.com/images/M/MV5BZjQzZDlhNWMtZDBlMS00YTgxLThiZDctNDA2N2EyZjNlMjE3XkEyXkFqcGdeQXVyNDEzNTUxMTk@._V1_SX300.jpg"
+     5) "plot"
+     6) "Story of Texas heiress Joan Robinson, who married plastic surgeon John Hill. Her father, Ash, is suspicious of Hill, thinking that he married Joan for money, which he used to buy a house ..."
+```
 
 All well and good, but as anyone who knows search knows, it's all about the indices. Where are they? What do they look like? How were they created? How are they populated?
 
@@ -21,7 +67,7 @@ We’ll take those questions in reverse order: One of the great things about Red
 {{% notice note %}} At this time the only things that can be indexed are Redis Hashes. This might sound like a big limitation but in practice it's not a problem. It turns out that for the structures where search is most often used then the native data structure is a hash, or the data is easily represented by a hash. 
 {{% /notice %}}
 
-So when we go to the ‘Search -> Movies’ page how was the index that supports that page populated? In a real-life application there’d be a once only export from the legacy system (MySQL in this case) followed by an import into Redis. What we do here in the Workshop is simply create both the MySQL and the Redis systems (including index creation, described below)  and then process any changes written to the streams, creating, updating and deleting entries as required. Specifically, the Consumer Group ‘cdc.search.index’ is the stream client which processes changes to generate the indexes according to the operation for that change. 
+So when we went to the ‘Search -> Movies’ page how was the index that supports that page populated? In a real-life application there’d be a once only export from the legacy system (MySQL in this case) followed by an import into Redis. What we do here in the Workshop is simply create both the MySQL and the Redis systems (including index creation, described below)  and then process any changes written to the streams, creating, updating and deleting entries as required. Specifically, the Consumer Group ‘cdc.search.index’ is the stream client which processes changes to generate the indexes according to the operation for that change. 
 
 So now we know how indices are populated, but how are indices created in the first place?
 
@@ -76,9 +122,9 @@ You should get the following output:
 ```
 (Your output will be much longer - we've truncated it here for clarity).
 
-In standard Redis command response syntax the result is a numerically labeled and nested attribute/value list, with the attribute name being immediately before the corresponding value. So, for example, line 1) defines the attribute name `index name`", and line 2) its value `ms:search:index:movies`
+In standard Redis command response syntax the result is a numerically labeled and nested attribute/value list, with the attribute name being immediately before the corresponding value. So, for example, line 1) defines the attribute name `index name`, and line 2) its value `ms:search:index:movies`
 
-Given that brief outline, we can see that the index definition is at position 6, and comprises 6 sub attributes. We can see that attribute 6) 3) indicates the following attribute contains `prefixes` of keys with which this index will be automatically populated. Attribute 6) 4) is thus an attribute list, albeit a list of only length 1 in this case. Attribute 6) 4) 1) is the `ms:docs:movies` prefix. 
+Given that brief outline, we can see that the index definition is at position 5, and comprises 6 sub attributes. We can see that attribute 6) 3) indicates the following attribute contains `prefixes` of keys with which this index will be automatically populated. Attribute 6) 4) is thus an attribute list, albeit a list of only length 1 in this case. Attribute 6) 4) 1) is the `ms:docs:movies` prefix. 
 
 So, hopefully, you can now understand that the `ms:search:index:movies` will  be populated with any hash whose key has a prefix of `ms:docs:movies`.
 
@@ -115,4 +161,4 @@ As you have experienced, once indexing is set up index management is completely 
 [FT.CREATE]: https://oss.redislabs.com/redisearch/Commands/#ftcreate
 [FT.INFO]: https://oss.redislabs.com/redisearch/Commands/#ftinfo
 [RedisInsight]: http://localhost:8001
-
+[redisearch-indices]: redisearch-indices.png
