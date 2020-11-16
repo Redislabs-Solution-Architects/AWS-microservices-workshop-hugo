@@ -2,22 +2,29 @@
 
 # AWSWorkshop.io base workshop 
 
-This is a base workshop.  Clone and start from this repo to create your workshop.
+This is a base workshop that requires [Hugo][.  Clone and start from this repo to create your workshop.
 
-You will need to setup hugo properly. In particular the Hugo 0.71 parser reveals a bug in the `hugo-them-learn` submodule.
+## Install Hugo
+Install Hugo by following [these instructions](https://gohugo.io/getting-started/installing/)
 
+(Note that the Hugo 0.71 the parser reveals a bug in the `hugo-theme-learn` submodule.)
+
+## Install this workshop
 Clone this repository:
 
 ```
 git clone https://github.com/TobyHFerguson/AWS-microservices-workshop.git
 ```
-Then initialize, install and update the submodule:
+### Install and Update the `hugo-theme-learn` submodule
+This workshop relies on the `hugo-theme-learn` submodule. Install it and then update it (the second update is required to ensure that the very latest version is installed because there's a bug in the current version.)
 ```
 cd AWS-microservices-workshop
 git submodule init
 git submodule update
 git submodule update --remote themes/hugo-theme-learn/
 ```
+
+## Run Hugo
 
 You can then run hugo:
 ```
