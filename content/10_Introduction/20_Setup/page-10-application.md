@@ -30,13 +30,21 @@ Starting redis-microservices-demo_streams-to-redisgraph-service_1 ... done
 Starting redis-microservices-demo_front-end_1                     ... done
 ```
 
-These services are all running on the docker bridge network `redis-microservices-demo_redis-microservices-network`. The one we're most interested in is the Redis service, `redis-service`, which exposes port 6379 on localhost. 
+These services are all running on the docker bridge network `redis-microservices-demo_redis-microservices-network` and expose various ports on localhost. The ones we're most interested in are:
+
+* The web front end, `redis-microservices-demo_front-end_1`, on port 8080;
+* The Redis database, `redis-service`, on port 6379.
 
 ## Testing the Example Application
 
 The Example Application should be running on your local host at http://localhost:8080. If all is successful then following that link in your browser will take you to this page:
 
 {{<figure src="rmdb_home_page.png" link="http://localhost:8080">}}
+
+
+{{% notice warning %}}
+The top black banner contains various menu items which offer different services. Although you can go explore right now they won't work until you complete the following steps! Once the following steps are completed then please do go explore the full application - we don't cover every aspect of this application in this workshop, but by playing around a bit you should get some understanding of what it does, if not how it does it!
+{{% /notice %}}
 
 ## Configuring the Application Services
 
@@ -47,14 +55,14 @@ Got to the [Services] part of the application. Start each of the services by pre
 {{<figure src="services.png">}}
 
 {{% notice tip %}}
-In the unlikely event that any services' status is 'Error' then just wait a few minutes to let the underlying system start working and move the status to 'Stopped' before hitting the 'Start It!' button
+You might initially see a status of 'Error'. Don't be alarmed! That's just the underlying services waiting for Docker to get all the networking etc. setup. Just wait a few moments to let the underlying system start working and once the status is 'Stopped' then go press the 'Start It!' button
 {{% /notice %}}
 
 ## Configuring Access to the OMDB Web Service
 
 We will be using [OMDB] as a web application to demonstrate caching. 
 
-[Get yourself an API key] and retrieve it from your email. Then paste it into the 'OMDB API Key' text entry box and hit 'Save'. 
+[Get yourself an API key] and retrieve it from your email. Then paste it into the 'OMDB API Key' text entry box on the [services] page and hit 'Save'. 
 
 ### Test OMDB Access
 To test that the application does indeed have access to OMDB execute the following steps:
@@ -68,6 +76,8 @@ Error: OMDBAPI Key is invalid -- see services page
 </p>
 
 then there's a problem with the OMDB access via that key. Check it and save it again to see if that fixes the problem.
+
+Of course, if you _don't_ see that red text then things are working and you're good to go!
 
 
 

@@ -4,24 +4,13 @@ chapter: true
 weight: 1
 ---
 # Redis - So Much More than just a Cache
-Redis is a great cache, but it is so much more than that. This workshop will help you understand some of the many features that takes Redis beyond a cache. 
+Redis is a great cache, but it is so much more than that. This workshop will help you understand just a few of the many features that takes Redis beyond a cache and into the world of a must-have data store for any modern, interactive application.
 
-## Learning Objectives
-- Understand Key Redis Features including Caching
-- Become familiar with using RedisInsight
+## Who is this workshop for
+This workshop is intended for application developers and architects with some command line familiarity to give them some experience about using Redis in an interactive application. From a learning perspective the workshop is both application domain and language neutral: the techniques and examples can be applied to many different application domains and implemented in many different languages. (Of course we had to make concrete choices here and we've chose Movies and Java as our application domain and language, but these are entirely arbitrary.)
 
-{{% notice warning %}}
-<p style='text-align: left;'>
-Once you've completed this course you won't be able to look at Redis the same way ever again. This will change the way you think about Redis, how it can be used, and what its appropriate for. Please do not continue if you cannot cope with that change!
-</p>
-{{% /notice %}}
 
-## Prerequisite Knowledge and Experience
-We’re expecting you to be:
 
-* comfortable using Git; 
-* have Maven and Java installed locally; 
-* can use Docker on your laptop;
-* can install a simple application (RedisInsight). 
+
 
 

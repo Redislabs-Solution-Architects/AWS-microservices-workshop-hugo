@@ -19,7 +19,7 @@ Click on the 'redis-service' database and you'll get to the actual database inte
 ![redis-service]
 
 {{% notice tip %}}
-Whenever we direct you to [RedisInsight] throughout the rest of the course this is the window you'll need to go to. We'll be directing you to various menu options shown on the left hand side of this window. Best to open this up in another tab now and keep it open for use later!
+Whenever we direct you to [RedisInsight](https://redislabs.com/redis-enterprise/redis-insight/) throughout the rest of the course this is the window you'll need to go to. We'll be directing you to various menu options shown on the left hand side of this window. Best to open this up in another tab now and keep it open for use later!
 {{% /notice %}}
 
 ----------
