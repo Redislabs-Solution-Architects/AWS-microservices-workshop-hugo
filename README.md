@@ -2,7 +2,7 @@
 
 # AWSWorkshop.io base workshop 
 
-This is a base workshop that requires [Hugo][.  Clone and start from this repo to create your workshop.
+This is a base workshop that requires [Hugo](https://gohugo.io/).  Clone and start from this repo to create your workshop.
 
 ## Install Hugo
 Install Hugo by following [these instructions](https://gohugo.io/getting-started/installing/)
