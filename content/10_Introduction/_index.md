@@ -20,7 +20,7 @@ Our learning objectives for you are that you'll:
 - Become familiar with using RedisInsight to interact directly with Redis
 
 
-It is not our intent to teach your Redis, make you a Redis expert, or cover all of Redis. We don't expect you to be a SpringBoot aficionado or a Java guru. Redis can be used with dozens (60+ at last count) of languages, so you can continue to do what you do well in the language of your choosing. The idea here is to get you excited and interested to learn more about using Redis
+It is not our intent to teach your Redis, make you a Redis expert, or cover all of Redis. We don't expect you to be a SpringBoot aficionado or a Java guru. Redis can be used with dozens (60+ at last count) of languages, so you can continue to do what you do well in the language of your choosing. The idea here is to get you excited and interested to learn more about using Redis. For that we recommend [Redis University] - free online courses from the home of Redis
 
 ## Prerequisite Knowledge and Experience
 For this Docker based version of the course we're expecting you to:
@@ -32,3 +32,4 @@ For this Docker based version of the course we're expecting you to:
 
 ----------
 [redisinsight]: https://redislabs.com/redis-enterprise/redis-insight/
+[redis university]: https://university.redislabs.com/
