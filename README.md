@@ -14,7 +14,7 @@ If not, go install them now.
 git clone https://github.com/tobyhferguson/aws-modernization-workshop-base.git &&
 cd aws-modernization-workshop-base &&
 git submodule init &&
-git submodule updaate &&
+git submodule update &&
 git submodule update --remote themes/hugo-theme-learn
 ```
 
