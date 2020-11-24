@@ -1,34 +1,69 @@
 
-
 # AWSWorkshop.io base workshop 
+## Workshop Students
+Visit the [Workshop Website] and enjoy your learning
 
-This is a base workshop that requires [Hugo](https://gohugo.io/).  Clone and start from this repo to create your workshop.
+## Workshop Developers
+We assume you have docker and docker-compose installed.
 
-## Install Hugo
-Install Hugo by following [these instructions](https://gohugo.io/getting-started/installing/)
+If not, go install them now. 
 
-(Note that the Hugo 0.71 the parser reveals a bug in the `hugo-theme-learn` submodule.)
-
-## Install this workshop
-Clone this repository:
+## Install Necessary Software 
 
 ```
-git clone https://github.com/TobyHFerguson/AWS-microservices-workshop.git
-```
-### Install and Update the `hugo-theme-learn` submodule
-This workshop relies on the `hugo-theme-learn` submodule. Install it and then update it (the second update is required to ensure that the very latest version is installed because there's a bug in the current version.)
-```
-cd AWS-microservices-workshop
-git submodule init
-git submodule update
-git submodule update --remote themes/hugo-theme-learn/
+git clone https://github.com/tobyhferguson/aws-modernization-workshop-base.git &&
+cd aws-modernization-workshop-base &&
+git submodule init &&
+git submodule updaate &&
+git submodule update --remote themes/hugo-theme-learn
 ```
 
-## Run Hugo
+## Run the Hugo Server
+`docker-compose up dev`
 
-You can then run hugo:
-```
-hugo server
-```
-and if you visit http://localhost:1313 you'll see the pages
+This will build the server and then run it, mounting the local directory. Any changes you make should be picked up and served to you as per the normal use of hugo.
 
+## Connect to the server
+Visit the server at http://localhost:1313
+
+
+## Make Changes
+Now feel free to make changes to the files in `./content/` - the server will pick them up automagically.
+
+Hit 'Ctl+C' to terminate the server 
+
+When you're finished you can deploy to S3 to let others see.
+
+## Deploy to S3
+First you must publish the site to the `./public/` directory:
+
+```
+docker-compose run publish
+```
+
+Once that has completed successfully deploy to the s3 bucket `s3://aws-workshop.redislabs.com` with ONE of the following two methods:
+
+Inline envars:
+```
+docker-compose run -e AWS_REGION=XXXX -e AWS_ACCESS_KEY_ID="XXXX" -e AWS_SECRET_ACCESS_KEY="XXXXXX ... XXXX" production
+```
+
+Envars:
+```
+export AWS_REGION=XXXX
+export AWS_ACCESS_KEY_ID=XXXX
+export AWS_SECRET_ACCESS_KEY=XXXX
+
+docker-compose run production
+```
+
+
+The result will be available at the [Workshop Website].
+
+(The actual url is in the file `config.toml` as the value of the `deployment.targets` section's `URL` key.)
+
+Pull request requested! If you can get the deploy action to work with the regular profile rather than having to export each envar then please make a pull request. Mounting `~/.aws` onto `/root/.aws` as per [the AWS Docker Instructions](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-docker.html) and then using the default profile didn't work, unfortunately.
+
+
+----------
+[Workshop Website]: https://s3.amazonaws.com/aws-workshop.redislabs.com/index.html

@@ -3,34 +3,14 @@ menuTitle: "Example Application"
 weight: 10
 ---
 ## Installing the Example Application
-Execute the following to clone and build the example application (you'll only ever need to do this once):
+With AWS' Cloudformation installing the example application and getting it to run is simply done by following this link:
 
-```sh
-git clone https://github.com/redis-developer/redis-microservices-demo &&
-cd redis-microservices-demo &&
-mvn clean package
-```
+<a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?stackName=aws-cfn&templateURL=https://s3.amazonaws.com/aws-workshop-cfn.redislabs.com/cfn.json"><img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"></a>
 
-## Running the example application
-Each time you want to run the example application execute the following in the `redis-microservices-demo` directory:
+This link uses the AWS region `us-east-1`. If you wish to launch your ECS cluster in a different region then use the region selection menu to choose the region:
 
-```sh
-docker-compose up -d
-```
+![region selector]
 
-This will start up many services, and you should see them running like this:
-```sh
-Starting redis-microservices-demo_redis-service_1          ... done
-Starting redis-microservices-demo_ws-notifications-service_1      ... done
-Starting redis-microservices-demo_streams-to-redisearch-service_1 ... done
-Starting redis-microservices-demo_sql-rest-api_1                  ... done
-Starting redis-microservices-demo_db-to-streams-service_1         ... done
-Starting redis-microservices-demo_caching-service_1               ... done
-Starting redis-microservices-demo_streams-to-redisgraph-service_1 ... done
-Starting redis-microservices-demo_front-end_1                     ... done
-```
-
-These services are all running on the docker bridge network `redis-microservices-demo_redis-microservices-network` and expose various ports on localhost. The ones we're most interested in are:
 
 * The web front end, `redis-microservices-demo_front-end_1`, on port 8080;
 * The Redis database, `redis-service`, on port 6379.
@@ -89,3 +69,4 @@ Of course, if you _don't_ see that red text then things are working and you're g
 [Movies (Legacy)]: http://localhost:8080/movies
 
 [services]: http://localhost:8080/services
+[region selector]: region-selector.png

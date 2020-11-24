@@ -8,6 +8,26 @@ metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= "true"
 uglyurls = "true"
 enableEmoji = true
+[deployment]
+[[deployment.targets]]
+# S3
+URL = "s3://aws-workshop.redislabs.com/hugo"
+
+[[deployment.matchers]]
+pattern = "^.+\\.(js|css|svg|ttf)$"
+#  Cache static assets for 1 year.
+# cacheControl = "max-age=31536000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+#  Cache static assets for 1 year.
+# cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true
 
 [params]
   # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page. 
