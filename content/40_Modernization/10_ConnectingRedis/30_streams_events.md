@@ -12,7 +12,7 @@ On the right hand side select ‘View Columns’ and ensure that only the 'sourc
 
 You can see that the stream has a lot of 'create' events - this is how Redis was populated in the first place; by listening in as records were created in MySQL during startup and having these records placed in the stream by the CDC system.
 
-Now, in the [Movies (Legacy) application] click on ‘Guardians of the Galaxy’, change the Release Year from 2014 to 2020 and Submit the change. 
+Now, in the 'Movies (Legacy) application' click on ‘Guardians of the Galaxy’, change the Release Year from 2014 to 2020 and Submit the change. 
 
 Go back to [RedisInsight]/Streams and you’ll see that the first row of the table has changed to reflect this update (if you’re quick you’ll actually see the update happen before your eyes!). You should see an 'update' record, like this;
 
@@ -23,4 +23,4 @@ Go back to [RedisInsight]/Streams and you’ll see that the first row of the tab
 [movies-stream]: movies-stream.png
 [Redisinsight]: https://localhost:8001
 [movies-updated]: movies-updated.png
-[Movies (Legacy) application]: http://localhost:8080/movies
+

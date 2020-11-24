@@ -4,7 +4,7 @@ weight: 20
 ---
 So lets turn on caching!
 
-In our application we've made it so you can turn caching on and off simply by operating the slider where it says 'Redis Cache' under the movies on the [Movies (Legacy)] page.
+In our application we've made it so you can turn caching on and off simply by operating the slider where it says 'Redis Cache' under the movies on the 'Movies (Legacy)' page.
 
 If the slider is white then caching is off:
 
@@ -32,4 +32,4 @@ You might like to think about the above behavior a bit and try to figure out why
 ----------
 [caching-off]: caching-off.png
 [caching-on]: caching-on.png
-[Movies (Legacy)]: http://localhost:8080/movies
+

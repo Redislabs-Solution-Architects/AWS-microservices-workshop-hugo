@@ -6,7 +6,7 @@ Have you ever been frustrated when you know what you’re looking for but can’
  
 Auto-suggestion gets the computer to do some of the search work for you - you type in some characters and, without you have to do anything else, suggestions as to how those characters match into the underlying information are presented to you. This is a combination of a sophisticated UI and the backend suggestion engine. RediSearch provides that suggestion engine!
 
-To try this out, go to the [Search -> Autocomplete](http://localhost:8080/autocomplete) page in the application and start typing in the ‘Title’ text box. Type ‘th’ … pretty shortly you’ll see a bunch of selections beginning with ‘Th’ such as ‘The Boy’ and ‘The Fly’ - as you type the suggestion list is modified to better match what you’ve typed. The interactivity is through the magic of javascript which we're not going to go into here, but the underlying suggestions that that javascript serves up come from Redis. 
+To try this out, go to the 'Search -> Autocomplete' page in the application and start typing in the ‘Title’ text box. Type ‘th’ … pretty shortly you’ll see a bunch of selections beginning with ‘Th’ such as ‘The Boy’ and ‘The Fly’ - as you type the suggestion list is modified to better match what you’ve typed. The interactivity is through the magic of javascript which we're not going to go into here, but the underlying suggestions that that javascript serves up come from Redis. 
 
 Let's go to [RedisInsight] and try this out in the CLI:
 

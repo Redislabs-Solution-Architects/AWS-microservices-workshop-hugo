@@ -8,7 +8,7 @@ Go to [OMDB] try it out in its native form. Look up some movies and actors and g
 
 Now lets go see this service 'wrapped up' in our example application.
 
-1. Go to [Movies (Legacy)]
+1. Go to 'Movies (Legacy)'
 1. Click on any movie
 1. Click on the green button <span>{{<figure src="refresh.png" height="10">}}</span>
 
@@ -35,7 +35,6 @@ Redis is a perfect solution here. By enabling caching one can:
 
 ----------
 [call_figures]:call-figures.png
-[Movies (Legacy)]: http://localhost:8080/movies
 [OMDB]: http://omdbapi.com
 [refresh]: refresh.png
 [research by Google]: http://glinden.blogspot.com/2006/11/marissa-mayer-at-web-20.html

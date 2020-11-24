@@ -2,7 +2,6 @@
 title: "Conclusion"
 weight: 50
 ---
-# Conclusion
 In this workshop you have:
 
 * Examined how basic Redis Caching can add value to an external application

@@ -2,7 +2,7 @@
 title: "RediSearch in Action"
 weight: 10
 ---
-To see [RediSearch] in action choose the [Search -> Movies] drop down. You’ll see a page with a search bar containing an asterisk ‘*’, and the results of that search (which, in this case, is all titles or plots matching the wildcard ‘*’. i.e. all movies!).
+To see [RediSearch] in action choose the 'Search -> Movies' drop down. You’ll see a page with a search bar containing an asterisk ‘*’, and the results of that search (which, in this case, is all titles or plots matching the wildcard ‘*’. i.e. all movies!).
 
 Type in a search term (say ‘marry’), and you’ll get a list of movies that match the term’s stem, not just an exact string match. 
 
@@ -12,4 +12,4 @@ These kinds of search (and many more) are supported natively by [Redisearch]. It
 
 ----------
 [redisearch]: https://oss.redislabs.com/redisearch/
-[Search -> Movies]: http://localhost:8080/search/movies
+

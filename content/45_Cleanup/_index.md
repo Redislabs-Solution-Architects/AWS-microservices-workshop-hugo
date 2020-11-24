@@ -1,0 +1,8 @@
+---
+title: "Cleanup"
+chapter: true
+weight: 45
+---
+The workshop is over - its time to clean up!
+
+Simply go to your AWS account, find the cloudformation stack (called 'aws-cfn', but you might've renamed it!) and delete it. 

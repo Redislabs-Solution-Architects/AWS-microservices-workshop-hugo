@@ -8,7 +8,7 @@ What 'faceted search' provides is a means for uses to interact with 'facets' or 
 * Ratings
 * Genre
 
-If you select the [Movies (Faceted)] from the search drop down menu you’ll see a page which allows you to experience how a UI artifact (in this case, sliders for ‘Release Year’ and ‘Ratings’; select boxes for ‘Genre’) can make a faceted search seem very natural. 
+If you select the 'Movies (Faceted)' from the search drop down menu you’ll see a page which allows you to experience how a UI artifact (in this case, sliders for ‘Release Year’ and ‘Ratings’; select boxes for ‘Genre’) can make a faceted search seem very natural. 
 
 ![faceted-search]
 
@@ -35,4 +35,4 @@ By now you should be starting to realize that RediSearch provides some pretty po
 ----------
 [faceted-search]: faceted-search.png
 [FT.SEARCH]: https://oss.redislabs.com/redisearch/Commands.html#ftsearch
-[Movies (Faceted)]: http://localhost:8080/search/movies/faceted
+
