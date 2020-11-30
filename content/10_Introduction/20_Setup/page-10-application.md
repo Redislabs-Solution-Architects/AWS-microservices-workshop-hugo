@@ -23,18 +23,13 @@ To launch your ECS cluster in a different region then use the region selection m
 
 ![region selector]
 
-On success you'll find that the base URL for the two services you care about will be available as the value of the `ApplicationURL` parameter:
+Once that has completed successfully then look at the 'Output' tab on the Cloudformation page where you can see values you'll need for the next few steps.
 
 ![cloudformation output]
 
-At this url will be found two services, on different ports:
-
-- The web front end, `redis-microservices-demo_front-end_1`, on port 80
-- The Redis database, `redis-service`, on port 6379.
-
 ## Testing the Example Application
 
-Follow the link to the web front end in your browser and you should see this page:
+Follow the link to the 'ApplicationURL' in your browser and you should see this page:
 
 {{<figure src="rmdb_home_page.png" >}}
 
