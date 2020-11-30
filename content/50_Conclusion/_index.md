@@ -8,6 +8,7 @@ In this workshop you have:
 * Used [RedisInsight] to interact directly with Redis
 * Learned about more sophisticated use of [Redis Streams] and CDC
 * Discovered that [RediSearch] is the gateway to really enhancing your application, making it much more interesting and useful to your users
+* Had a brief taste of [RedisGraph] and the powerful [Cypher] language
 
 But this is only the beginning. Redis can do much more! For example:
 
@@ -16,7 +17,7 @@ But this is only the beginning. Redis can do much more! For example:
 * Redis can [implement leaderboards] very efficiently; something that SQL really struggles to do!
 * Redis supports [geospatial] indexes, so you can easily provide sophisticated mapping interfaces to users
 
-I hope that this has persuaded you to think more about Redis and maybe consider looking it at as so much more than a cache!
+These are just a few of the many features of Redis that often go unknown and unappreciated. I hope that this workshop has persuaded you to think more about Redis and maybe consider looking it at as so much more than a cache!
 
 ----------
 [Redisinsight]: https://redislabs.com/redis-enterprise/redis-insight/
@@ -26,3 +27,5 @@ I hope that this has persuaded you to think more about Redis and maybe consider 
 [synchronous messaging]: https://redis.io/topics/pubsub
 [implement leaderboards]: https://redislabs.com/solutions/use-cases/leaderboards/
 [geospatial]: https://redislabs.com/redis-best-practices/indexing-patterns/geospatial/
+[redisgraph]: https://redislabs.com/modules/redis-graph/
+[cypher]: https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf
