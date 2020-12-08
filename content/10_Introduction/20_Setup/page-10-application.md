@@ -3,7 +3,7 @@ menuTitle: "Example Application"
 weight: 10
 ---
 ## Installing the Example Application
-With AWS' Cloudformation installing the example application and getting it to run is simply done by following this link:
+Install the example application by using AWS' Cloudformation. Simply click on this link:
 
 <a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/review?stackName=aws-cfn&templateURL=https://s3.amazonaws.com/aws-workshop-cfn.redislabs.com/cfn.json" target="_blank"><img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"></a>
 
@@ -11,7 +11,7 @@ This will take you to this summary page:
 
 ![cloudformation page 1]
 
-- you _can_ change the stack name if you like, but you *must* provide a VPC and a Subnet. (Make sure the Subnet is located inside the VPC!). You'll then be taken to the stack creation page where you'll see creation events occurring and, after 5-10 minutes, you should see success:
+You _can_ change the stack name if you like, but you *must* provide a VPC and a Subnet. (Make sure the Subnet is located inside the VPC!). You'll then be taken to the stack creation page where you'll see creation events occurring and, after 5-10 minutes, you should see success:
 
 ![cloudformation page 2]
 
