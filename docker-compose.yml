@@ -10,7 +10,7 @@ services:
 
   publish:
     image: klakegg/hugo:ext-alpine
-    command: --baseUrl https://s3.amazonaws.com/aws-workshop.redislabs.com
+    command: --baseUrl "https://s3.amazonaws.com/aws-workshop.redislabs.com/"
     volumes:
       - ".:/src"
 
