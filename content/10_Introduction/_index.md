@@ -5,7 +5,7 @@ weight: 10
 ---
 # Solving Data Challenges in Cloud Applications with Redis
 
-Welcome to the Data Challenges with Redis workshop. We're glad you're here and sharing some of your precious time with us! We hope you'll find this valuable and will come away with a deeper appreciation of how to solve these challenges using Redis, as well as a strong idea that there's more to Redis than we're telling you about!
+Welcome to the Solving Data Challenges with Redis workshop. We're glad you're here and sharing some of your precious time with us! We hope you'll find this valuable and will come away with a deeper appreciation of how to solve these challenges using Redis, as well as a strong idea that there's more to Redis than we're telling you about!
 
 So what's so special about Cloud Applications? Well, they're ubiquitous, and becoming more so with the Covid pandemic. The whole going online program has been accelerated by several years, as [evidenced by this report from BDO]. But more than that, they have unique data challenges:
 
