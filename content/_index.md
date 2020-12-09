@@ -1,12 +1,11 @@
 ---
-title: "Redis - So Much More than just a Cache"
+title: "Solving Data Challenges in Cloud Applications with Redis"
 chapter: true
 weight: 1
 ---
-# Redis - So Much More than just a Cache
-Redis is a great cache, but it is so much more than that. This workshop will help you understand just a few of the many features that takes Redis beyond a cache and into the world of a must-have data store for any modern, interactive application.
+# Solving Data Challenges in Cloud Applications with Redis
 
-
+In our modern cloud world we have a myriad of data challenges. See what these challenges are, and learn something about how these can be solved using Redis. 
 
 
 
