@@ -17,7 +17,7 @@ So what's so special about Cloud Applications? Well, they're ubiquitous, and bec
 
 There are many solutions that address some of these challenges, but few that really address them all and at the scale required. It turns out that Redis is such a solution that was specifically created to address exactly this market, and has successfully proved itself for over a decade. Which is why we're talking to you about it as a solution!
 
-Redis has been primarily used as an in-memory, NO-SQL cache where it is amongst the fastest in its field (with less than 1mS latency) and (in the Redis Labs Enterprise commercial offering) has shown itself capable of scaling out to handle _hundreds of millions_ of operations per second at that latency, in highly available architectures.
+Redis has been primarily used as an in-memory, NO-SQL cache where it is amongst the fastest in its field (with less than 1mS latency) and (in the [Redis Labs Enterprise] commercial offering) has shown itself [capable of scaling out] to handle _hundreds of millions_ of operations per second at that latency, in highly available architectures.
 
 All that is well and good, but more is required to really solve the data challenges. In particular the intense competition amongst online providers is increasing, and this requires that cloud applications:
 
@@ -36,3 +36,5 @@ As you go through this workshop you'll be exposed to not just the simple caching
 
 --------
 [evidenced by this report from BDO]: https://www.bdo.com/insights/business-financial-advisory/strategy,-technology-transformation/covid-19-is-accelerating-the-rise-of-the-digital-e
+[Redis Labs Enterprise]: https://redislabs.com/redis-enterprise/advantages/
+[capable of scaling out]: https://redislabs.com/blog/redis-enterprise-extends-linear-scalability-200m-ops-sec/

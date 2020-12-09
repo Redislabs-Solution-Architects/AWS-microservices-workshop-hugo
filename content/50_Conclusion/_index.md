@@ -19,6 +19,8 @@ But this is only the beginning. Redis can do much more! For example:
 
 These are just a few of the many features of Redis that often go unknown and unappreciated. I hope that this workshop has persuaded you to think more about Redis and maybe consider looking it at as so much more than a cache!
 
+If you like what you see but are interested in a higher performance, more scalable, more secure and optionally managed Redis then why not [register for Redis Enterprise] and get 30 days free access to a 4 node cluster to really see what Redis can do!
+
 ----------
 [Redisinsight]: https://redislabs.com/redis-enterprise/redis-insight/
 [redis streams]: https://redis.io/topics/streams-intro
@@ -29,3 +31,4 @@ These are just a few of the many features of Redis that often go unknown and una
 [geospatial]: https://redislabs.com/redis-best-practices/indexing-patterns/geospatial/
 [redisgraph]: https://redislabs.com/modules/redis-graph/
 [cypher]: https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf
+[register for Redis Enterprise]: https://app.redislabs.com/#/login
